@@ -32,7 +32,7 @@ except:
 w = 640
 h = 480
 
-# A partir d'ici, la magie opère ... =================================
+# Début de la simulation de respiration
 
 prevFrame = [[0]*w]*h
 
