@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 
+
+# TVS
+# miccarr & elaxis
+
 # Marge de mouvement non considéré
 marge = 50
 
