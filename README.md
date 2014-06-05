@@ -2,6 +2,8 @@ tvs
 ===
 
 Trahison Virtuelle de la Sensibilité
+Alexis Pétard & Clément Catherine
+Bruxelles, 2013
 
 # tvs.py (python 2.7)
 script dépendant de freenect qui permet de moduler une valeur en fonction de la densité de pixels et de leur proximité par rapport au centre du point de vision de la kinect.
