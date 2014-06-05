@@ -1,6 +1,6 @@
 /* 
 
-Alexis Pétard
+Elaxis
 http://elaxis.fr
 Bruxelles, 2014
 
