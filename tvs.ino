@@ -9,19 +9,17 @@ eteindre = envoyer "0" en serie
 
 */
 
+// Variable pour la communication série
 char recu[20];
 String reponse;
-int yeau = 0;
-int i;
-
-
-int vitesse = 60;
+int i; // Pour attraper tous les caractères
+int vitesse = 60; // Vitesse de base
 #include <Stepper.h>
 
-int enA  = 3;  // Enable pin 1 on Motor Control Shield   
-int enB  = 9;  // Enable pin 2 on Motor Control Shield   
-int dirA = 2;  // Direction pin dirA on Motor Control Shield
-int dirB = 8;  // Direction pin dirB on Motor Control Shield
+int enA  = 3;  // Enable pin 1
+int enB  = 9;  // Enable pin 2
+int dirA = 2;  // Direction pin dirA
+int dirB = 8;  // Direction pin dirB
 
 
 const int stepsPerRevolution = 200;  
@@ -47,7 +45,7 @@ void loop() {
       Serial.println("Moteur GO");
       reponse = 0;
       i = 0 ;
-      while ( Serial.available()>0 )      {
+      while ( Serial.available()>0 ) {
             recu[i] = Serial.read();
             reponse += recu[i];
             i++;
@@ -55,17 +53,17 @@ void loop() {
       }
       if (i>0) {
             Serial.println(reponse);
-            vitesse = reponse.toInt();
+            vitesse = reponse.toInt(); // Conversion string to int dangereuse
             if (vitesse < 120 && vitesse >= 60) {
               Serial.println("OK ca change");
               myStepper.setSpeed(vitesse);
-            } else if (vitesse == 0) {
+            } else if (vitesse == 0) { // Envoi d'un 0 => Arret (definitif) du moteur
               Serial.print("OK on arrete");
               myStepper.setSpeed(vitesse);
-              digitalWrite(enA,LOW);
-              digitalWrite(enB,LOW);
-            } else {
-              Serial.println("pas bon"); 
+              digitalWrite(enA,LOW); // Arret bobine A
+              digitalWrite(enB,LOW); // Arret bobine B
+            } else {                  // Envoi d'un mauvais numéro
+              Serial.println("pas bon"); // Rien ne se passe
             }
       }
 }
