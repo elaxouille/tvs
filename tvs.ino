@@ -1,4 +1,9 @@
 /* 
+
+Alexis Pétard
+http://elaxis.fr
+Bruxelles, 2014
+
 Arduino Uno / RESPIRE / projet TVS
 Utilisation de la bibliothèque Stepper pour contrôler le moteur
 
