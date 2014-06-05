@@ -3,19 +3,19 @@ tvs
 
 Trahison Virtuelle de la Sensibilité
 
-# tvs.py 
+# tvs.py (python 2.7)
 script dépendant de freenect qui permet de moduler une valeur en fonction de la densité de pixels et de leur proximité par rapport au centre du point de vision de la kinect.
 
 principal problème actuel : mauvaise gestion de libusb par linux.
 
-### a faire 
+### À faire 
 * la valeur doit être envoyée en série (ttyACM0) grâce au module pySerial
 * gestion du protocole de communication
 
-# tvs.ino
+# tvs.ino (arduino)
 script dépendant de la bibliothèque Stepper pour arduino qui permet de réceptionner une variable à travers un port série et de modifier sa vitesse et son amplitude en fonction de cette variable.
 
-### a faire 
+### À faire 
 * protocole de lancement, principalement pour un calibrage, avec :
     1. allumage bobines
     2. verification à vide : vitesse minimale
