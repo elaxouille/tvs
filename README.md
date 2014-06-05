@@ -6,7 +6,11 @@ Trahison Virtuelle de la Sensibilité
 # tvs.py (python 2.7)
 script dépendant de freenect qui permet de moduler une valeur en fonction de la densité de pixels et de leur proximité par rapport au centre du point de vision de la kinect.
 
-principal problème actuel : mauvaise gestion de libusb par linux.
+prerequis = compiler freenect.py en local et déplacer le .so dans tvs/
+> python setup.py build_ext --inplace
+
+principal problème actuel : mauvaise gestion de libusb par linux. beaucoup de frames sont droppées
+- essayer avec d'autres usb branchés (bidouille)
 
 ### À faire 
 * la valeur doit être envoyée en série (ttyACM0) grâce au module pySerial
