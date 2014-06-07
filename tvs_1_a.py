@@ -71,6 +71,7 @@ try:
 			result -= decrementationpeur
 		if result > 100 + maxtouravantfinangoisse :
 			result = 100 + maxtouravantfinangoisse
+		#Preparation a la communication en serie
 		print "Mouvement : \t", mouvement
 		print "Result : \t", result
 		
