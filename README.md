@@ -13,6 +13,14 @@ script dépendant de freenect qui permet de moduler une valeur en fonction de la
 prerequis = compiler freenect.py en local et déplacer le .so dans tvs/
 > python setup.py build_ext --inplace
 
+pour communiquer en série, utiliser pyserial :
+> ser = serial.Serial('/dev/ttyACMO')  # peut etre rajouter le baudrate et le timeout en arguments directement a la suite
+> x = ser.read()                       # lit un byte
+> s = ser.read(10)                     # lit jusqu'à 10 bytes (timeout)
+> line = ser.readline()                # lit une ligne qui se termine par un \n (attention, methode dangereuse)
+> ser.close()
+
+
 principal problème actuel : mauvaise gestion de libusb par linux. beaucoup de frames sont droppées
 - essayer avec d'autres usb branchés (bidouille)
 - attendre de voir avec les updates
