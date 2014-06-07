@@ -14,10 +14,16 @@ prerequis = compiler freenect.py en local et déplacer le .so dans tvs/
 > python setup.py build_ext --inplace
 
 pour communiquer en série, utiliser pyserial :
-> ser = serial.Serial('/dev/ttyACMO')  # peut etre rajouter le baudrate et le timeout en arguments directement a la suite
-> x = ser.read()                       # lit un byte
-> s = ser.read(10)                     # lit jusqu'à 10 bytes (timeout)
-> line = ser.readline()                # lit une ligne qui se termine par un \n (attention, methode dangereuse)
+1. peut etre rajouter le baudrate et le timeout en arguments directement à la suite du directory
+2. lit un byte
+3. lit jusqu'à 10 bytes
+4. lit une ligne qui se termine pas un '\n' (attention, methode dangereuse)
+5. ferme le port
+
+> ser = serial.Serial('/dev/ttyACMO')
+> x = ser.read()
+> s = ser.read(10)
+> line = ser.readline()
 > ser.close()
 
 
