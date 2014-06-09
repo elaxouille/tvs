@@ -13,6 +13,7 @@ script dépendant de freenect qui permet de moduler une valeur en fonction de la
 prerequis = compiler freenect.py en local et déplacer le .so dans tvs/
 > python setup.py build_ext --inplace
 
+
 pour communiquer en série, utiliser pyserial :
 
    1. peut etre rajouter le baudrate et le timeout en arguments directement à la suite du directory
@@ -21,11 +22,15 @@ pour communiquer en série, utiliser pyserial :
    4. lit une ligne qui se termine pas un '\n' (attention, methode dangereuse)
    5. ferme le port
 
-> ser = serial.Serial('/dev/ttyACMO')
-> x = ser.read()
-> s = ser.read(10)
-> line = ser.readline()
-> ser.close()
+> import serial
+> ser = serial.Serial()
+> ser.baudrate = 9600
+> ser.port = '/dev/ttyACM0'
+> ser.open()
+> ser.write(mouvement)
+
+! insérer delay pour ne pas provoquer de collisions
+! insérer une vérification d'accusé de réception
 
 
 principal problème actuel : mauvaise gestion de libusb par linux. beaucoup de frames sont droppées
