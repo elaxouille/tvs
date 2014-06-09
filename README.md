@@ -22,14 +22,14 @@ pour communiquer en série, utiliser pyserial :
    4. lit une ligne qui se termine pas un '\n' (attention, methode dangereuse)
    5. ferme le port
 
-...
+
 import serial
 ser = serial.Serial()
 ser.baudrate = 9600
 ser.port = '/dev/ttyACM0'
 ser.open()
 ser.write(mouvement)
-...
+
 
 ! insérer delay pour ne pas provoquer de collisions
 ! insérer une vérification d'accusé de réception
