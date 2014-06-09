@@ -1,0 +1,256 @@
+/* 
+ 
+ Elaxis
+ 090614
+ 
+ Arduino Uno / RESPIRE / projet TVS
+ Utilisation de la bibliothèque Stepper pour contrôler le moteur
+ 
+ version 1.2alpha
+ Effectue une série de trois tests puis s'éteint.
+ Premier test lent
+ Second test rapide
+ Troisieme test incrémentation de vitesse 5 < x < 120 pour x+=5 
+ ### T.V.S. ###
+ 
+ ### À faire 
+ COMMUNICATION KINECT !!!
+ * protocole de lancement, principalement pour un calibrage, avec :
+ 1. allumage bobines
+ 2. verification à vide : vitesse minimale
+ 3. verification à vide : vitesse maximale
+ 4. mise en position de départ
+ 5. attente avant confirmation pour départ deuxieme calibrage (fixation des fils)
+ 6. deuxieme calibrage après fixation
+ 1. position minimale
+ 2. position maximale
+ 3. vitesse minimale, amplitude minimale
+ 4. vitesse maximale, amplitude maximale (bref instant)
+ 5. vitesse maximale, amplitude minimale (pour les tremblements, la resistance du moteur, de ses fixations, et de fils)
+ 7. infirmation = repetition des etapes
+ 8. confirmation = allumage de la kinect
+ 9. test de fonctionnement de la kinect
+ 10. test de communication entre kinect et arduino
+ 11. processus d'enclenchement du réveil
+ * receptionner la variable à un meilleur rythme
+ * diviser la variable en deux :
+ * amplitude de respiration
+ * vitesse
+ * trouver une meilleur solution pour gérer le changement de vitesse et la perturbation des cycles de respiration
+ * tout en gardant une cohérence dans le positionnement
+ * trouver des moments pour éteindre le moteur afin d'éviter la surchauffe
+ 
+ 
+ */
+
+// Variable pour la communication série
+int last = 6;
+int protocole=4;
+int minimum = 1;
+int maximum = 120;
+int respirationNormale = 6;
+int i; // Pour attraper tous les caractères
+int vitesse = 6; // Vitesse de base
+#include <Stepper.h>
+float amplitude = 1.5;
+int enA  = 3;  // Enable pin 1
+int enB  = 9;  // Enable pin 2
+int dirA = 2;  // Direction pin dirA
+int dirB = 8;  // Direction pin dirB
+boolean shut = true;
+boolean calibrage = false;
+const unsigned int MAX_INPUT = 50;
+
+
+const int stepsPerRevolution = 200;  
+
+// Initialisation de la classe Stepper
+Stepper myStepper(stepsPerRevolution, dirA, dirB);            
+
+unsigned int integerValue = 0;
+char incomingByte;
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Arduino OK");
+  changeVitesse(vitesse); // 60 < n < ~120
+  // Allumage du moteur
+  pinMode(enA, OUTPUT);
+  pinMode(enB, OUTPUT);
+  allumageMoteur();
+}
+void process_data (const char * data)
+{
+
+  Serial.print("[ARD]\tRecu : ");
+  Serial.println(data);
+  vitesse = atoi(data);
+  Serial.print("[ARD]\tVitesse : ");
+  Serial.println(vitesse);
+  last = vitesse;
+}  // end of process_data
+
+void processIncomingByte (const byte inByte)
+{
+  static char input_line [MAX_INPUT];
+  static unsigned int input_pos = 0;
+
+  switch (inByte)
+  {
+
+  case '\n':   // end of text
+    input_line [input_pos] = 0;  // terminating null byte
+
+    // terminator reached! process input_line here ...
+    process_data (input_line);
+    // reset buffer for next time
+    input_pos = 0;  
+    break;
+  case '\r':   // discard carriage return
+    break;
+  default:
+    // keep adding if not full ... allow for terminating null byte
+    if (input_pos < (MAX_INPUT - 1))
+      input_line [input_pos++] = inByte;
+    break;
+
+  }  // end of switch
+
+} // end of processIncomingByte  
+void loop() {
+  switch(protocole) {
+  case 0:
+    Serial.println("Step 1");
+    testLent();
+    Serial.println("Step 1 OK");
+    protocole++;
+  case 1:
+    Serial.println("Step 2");
+    testRapide();
+    Serial.println("Step 2 OK");
+    protocole++;
+  case 2:
+    Serial.println("Step 3");
+    //testAccel();
+    Serial.println("Step 3 OK");
+    protocole++;
+
+  case 3:
+    Serial.println("Step 4 : Clement, grouille-toi");
+    extinctionMoteur();
+    for (int l = 0; l < 50;l++) {
+      Serial.print(l);
+      Serial.println(" BIP");
+      delay(1000);  
+    }
+    vitesse=respirationNormale;
+    changeVitesse(vitesse);
+    allumageMoteur();
+    protocole++;
+
+  case 4: 
+    inspire();
+    if(Serial.available() > 0) {
+      processIncomingByte(Serial.read());
+      Serial.println("[ARD]\tCa respire");
+    }
+    changeVitesse(last);
+    expire();
+    if(Serial.available() > 0) {
+      processIncomingByte(Serial.read());
+      Serial.println("[ARD]\tCa respire");
+    }
+    changeVitesse(last);
+  default:
+    break;
+
+
+  }
+}
+
+void allumageMoteur() {
+  digitalWrite (enA, HIGH);
+  digitalWrite (enB, HIGH);
+  Serial.println("------Moteur ON");
+  shut=false;
+}
+void extinctionMoteur() {
+  digitalWrite(enA,LOW);
+  digitalWrite(enB,LOW);
+  //Serial.println("------Moteur OFF");
+  shut=true; 
+}
+void changeVitesse(int v) {
+  myStepper.setSpeed(v);
+}
+
+void testLent() {
+  Serial.println("---Initialisation du test");
+  allumageMoteur();
+  changeVitesse(6);
+  Serial.println("0%");
+  myStepper.step(stepsPerRevolution*amplitude);
+  Serial.println("50%");
+  myStepper.step(-stepsPerRevolution*amplitude);
+  Serial.println("100%");
+  extinctionMoteur();
+  delay(6000);
+}
+void testRapide() {
+  Serial.println("---Initialisation du test");
+  allumageMoteur();
+  changeVitesse(100);
+  Serial.println("0%");
+  myStepper.step(stepsPerRevolution*amplitude);
+  Serial.println("50%");
+  myStepper.step(-stepsPerRevolution*amplitude);
+  Serial.println("100%");
+  extinctionMoteur();
+  delay(6000);
+
+}
+void testAccel() {
+  Serial.println("---Initialisation du test");
+  allumageMoteur();
+  for(int o = 5; o < 120; o+=5) {
+    changeVitesse(o);
+    Serial.println("0%");
+    myStepper.step(stepsPerRevolution*amplitude);
+    Serial.println("50%");
+    myStepper.step(-stepsPerRevolution*amplitude);
+    Serial.println("100%");
+  }
+  extinctionMoteur();
+  delay(6000);
+}
+
+void respire() {
+  inspire();
+  expire();
+}
+void inspire() {
+  Serial.println("INSPIRATION");
+  myStepper.step(stepsPerRevolution*amplitude);
+  Serial.println("INSPIRATION FAITE");
+}
+void expire() {
+  Serial.println("EXPIRATION");
+  myStepper.step(-stepsPerRevolution*amplitude);
+  Serial.println("EXPIRATION FAITE"); 
+}
+
+void angoisse() {
+  Serial.println("TOP ANGOISSE");
+  allumageMoteur();
+  for (int u = 0; u <= 20; u++) {
+    Serial.print("[ARD]\tANGOISSE");
+    changeVitesse(99);
+    respire();
+    Serial.println(u);
+  } 
+  myStepper.step(stepsPerRevolution*amplitude);
+  changeVitesse(6);
+  myStepper.step(-stepsPerRevolution*amplitude);
+  Serial.println("FIN ANGOISSE");
+}
+
