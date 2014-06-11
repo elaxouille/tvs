@@ -6,6 +6,7 @@
 */
 
 // Variable pour la communication série
+int buf[3];
 int last = 6;
 int protocole=0;
 int minimum = 1;
@@ -40,6 +41,7 @@ void process_data(const char* data) {
   vitesse = atoi(data);
   Serial.print("RECU : ");
   Serial.println(vitesse);
+  buf[sizeof(buf)] += vitesse;
 }
 
 void processIncomingByte(const byte inByte) {
@@ -70,6 +72,7 @@ void loop() {
       processIncomingByte(Serial.read());
       changeVitesse(vitesse);
       respire();
+      buf[sizeof(buf)] = 0;
     }
   default:
     break;
