@@ -1,0 +1,547 @@
+[0;31m[PYT][0m	OUVERTURE PORT SERIE
+[0;34m[TVS][0m [0;32mDémarrage de la kinect[0m (CTRL-C pour quitter)
+R : 6
+
+[0;31m[PYT][0m	ENVOI 94
+BUFFER : 0
+
+[0;31m[PYT][0m	ENVOI 89
+0
+
+[0;31m[PYT][0m	ENVOI 84
+0
+
+[0;31m[PYT][0m	ENVOI 79
+3367
+
+[0;31m[PYT][0m	ENVOI 73
+1207
+
+[0;31m[PYT][0m	ENVOI 67
+-15616
+
+[0;31m[PYT][0m	ENVOI 61
+CHANGEMENT-VITESSE : 	6
+
+[0;31m[PYT][0m	ENVOI 55
+Arduino OK
+
+[0;31m[PYT][0m	ENVOI 49
+ARDUINO PRETE
+
+[0;31m[PYT][0m	ENVOI 43
+CHANGEMENT-VITESSE : 	16
+
+[0;31m[PYT][0m	ENVOI 37
+RECU : 94
+
+[0;31m[PYT][0m	ENVOI 31
+BUFFER : 0
+
+[0;31m[PYT][0m	ENVOI 26
+0
+
+[0;31m[PYT][0m	ENVOI 21
+0
+
+[0;31m[PYT][0m	ENVOI 16
+-19428
+
+[0;31m[PYT][0m	ENVOI 11
+101
+
+[0;31m[PYT][0m	ENVOI 6
+21248
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	1
+CHANGEMENT-VITESSE : 	94
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+RECU : 89
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+10101
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+123
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+17920
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+CHANGEMENT-VITESSE : 	89
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+RECU : 84
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+-25775
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+144
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+14592
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+CHANGEMENT-VITESSE : 	84
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+RECU : 79
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+3885
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+166
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+11008
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+CHANGEMENT-VITESSE : 	79
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+RECU : 73
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+-32768
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+187
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+7168
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+CHANGEMENT-VITESSE : 	73
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+RECU : 67
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+-22408
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+215
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+-25600
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+CHANGEMENT-VITESSE : 	67
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+RECU : 61
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+-12176
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+243
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+6912
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+CHANGEMENT-VITESSE : 	61
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+RECU : 55
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+-1944
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+271
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+-26368
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+CHANGEMENT-VITESSE : 	55
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+RECU : 49
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+18779
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+307
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+5888
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+CHANGEMENT-VITESSE : 	49
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+RECU : 43
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+9324
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+350
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+-4096
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+CHANGEMENT-VITESSE : 	43
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+RECU : 37
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+393
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+-13824
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+CHANGEMENT-VITESSE : 	37
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+RECU : 31
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+0
+
+[0;31m[PYT][0m	ENVOI 28
+0
+
+[0;31m[PYT][0m	ENVOI 58
+16448
+
+[0;31m[PYT][0m	ENVOI 75
+449
+
+[0;31m[PYT][0m	ENVOI 70
+-17920
+
+[0;31m[PYT][0m	ENVOI 66
+CHANGEMENT-VITESSE : 	31
+
+[0;31m[PYT][0m	ENVOI 61
+RECU : 26
+
+[0;31m[PYT][0m	ENVOI 56
+BUFFER : 0
+
+[0;31m[PYT][0m	ENVOI 51
+0
+
+[0;31m[PYT][0m	ENVOI 45
+0
+
+[0;31m[PYT][0m	ENVOI 40
+-23962
+
+[0;31m[PYT][0m	ENVOI 35
+512
+
+[0;31m[PYT][0m	ENVOI 30
+-24576
+
+[0;31m[PYT][0m	ENVOI 25
+CHANGEMENT-VITESSE : 	26
+
+[0;31m[PYT][0m	ENVOI 21
+RECU : 21
+
+[0;31m[PYT][0m	ENVOI 15
+BUFFER : 0
+
+[0;31m[PYT][0m	ENVOI 11
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	5
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+14635
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+590
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+25856
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+CHANGEMENT-VITESSE : 	21
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+RECU : 16
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+14635
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+690
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-2
+3328
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-1
+CHANGEMENT-VITESSE : 	16
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	0
+RECU : 11
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-5
+BUFFER : 0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-4
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	-3
+0
+
+[0;31m[PYT][0m	CALME	ENVOI : 06
+[0;31m[PYT][0m	4
+-908
+
+[0;31m[PYT][0m	ENVOI 27
+816
+
+[0;31m[PYT][0m	ENVOI 58
+-10496
+
+[0;31m[PYT][0m	ENVOI 61
+CHANGEMENT-VITESSE : 	11
+
+[0;31m[PYT][0m	ENVOI 56
+RECU : 6
+
+[0;31m[PYT][0m	ENVOI 57
+BUFFER : 0
+
+[0;31m[PYT][0m	ENVOI 64
+0
+
+[0;31m[PYT][0m	ENVOI 62
+0
+
+[0;31m[PYT][0m	ENVOI 57
+-16838
+
+[0;31m[PYT][0m	ENVOI 52
+943
+
+[0;31m[PYT][0m	ENVOI 47
+-24576
+
+[0;31m[PYT][0m	ENVOI 41
+CHANGEMENT-VITESSE : 	6
+
+[0;31m[PYT][0m	ENVOI 36
+
+[0;31m[TVS][0m [0;32mArrêt de la kinect[0m
