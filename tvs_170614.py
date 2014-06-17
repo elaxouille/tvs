@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 
-
 # TVS
 # miccarr & elaxis
-# 170614
+# v0_1
 
 # Marge de mouvement non considéré
 marge = 50
@@ -24,7 +23,7 @@ ser.baudrate=9600
 ser.port="/dev/ttyACM0"
 
 # Delai entre les respirations
-respire = 3.0;
+respire = 3;
 try:
 	ser.open()
 	print "\033[0;31m[PYT]\033[0m\tOUVERTURE PORT SERIE"
@@ -47,21 +46,13 @@ except:
 # Taille de l'image recue du kinect
 w = 640
 h = 480
-
-# Début de la simulation de respiration
-
 prevFrame = [[0]*w]*h
-
 result = 0
-
-
 try:
 	while 1:
 		time.sleep(respire) # Pour ne pas surcharger l'arduino
 		depth = freenect.sync_get_depth()[0]
-		
 		mouvement = 0
-
 		for y in range(0, h-1, step) :
 			for x in range(0, w-1, step) :
 				if( depth[y][x] < prevFrame[y][x]-marge or depth[y][x] > prevFrame[y][x]+marge ):
@@ -73,43 +64,38 @@ try:
 						mouvement += x *2
 					else:
 						mouvement += (h - x) *2
-		
 		prevFrame = depth
-		
 		mouvement = ( mouvement * 100 / 3840000 ) - 3
-		
 		if (mouvement < 0):
 			mouvement = 0
 		elif mouvement > 100:
 			mouvement = 100
-			
 		result += mouvement
-		
 		if result > 0 :
 			result -= decrementationpeur
 		if result > 100 + maxtouravantfinangoisse :
 			result = 100 + maxtouravantfinangoisse
 		# print "Mouvement : \t", mouvement
 		if (result>99):
-			print "\033[0;31m[PYT]\033[0m\tANGOISSE\n"
 			envoi = 99
+			print "\033[0;31m[PYT]\033[0m\tANGOISSE:\t",str(envoi)
 		elif (result<6):
-			print "\033[0;31m[PYT]\033[0m\tCALME\n"
 			envoi = 6
+			print "\033[0;31m[PYT]\033[0m\tCALME:\t",str(envoi)
 		else :
-			print "\033[0;31m[PYT]\033[0m\tNORMAL\n"
-			envoi = str(result).format('02d')
+			try:
+				envoi = str(result).format('02d')
+			except:
+				print "mauvais format de result"
+			print "\033[0;31m[PYT]\033[0m\tNORMAL:\t",envoi
 		respire = float(180/float(envoi))
 		if (isConnected):
 			print ser.readline()
-			ser.write(envoi)
+			ser.write(str(envoi))
 			ser.write('\n')
 		else :
 			print "\033[0;31m[PYT]\033[0m\tPas connecte a l arduino\n"
-			print envoi
 
-
-		
 except (KeyboardInterrupt, SystemExit):
 	ser.write("00\n")
 	freenect.Kill
