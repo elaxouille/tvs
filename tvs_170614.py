@@ -24,7 +24,7 @@ ser.baudrate=9600
 ser.port="/dev/ttyACM0"
 
 # Delai entre les respirations
-respire = 3;
+respire = 3.0;
 try:
 	ser.open()
 	print "\033[0;31m[PYT]\033[0m\tOUVERTURE PORT SERIE"
