@@ -99,7 +99,7 @@ try:
 		else :
 			print "\033[0;31m[PYT]\033[0m\tNORMAL\n"
 			envoi = str(result).format('02d')
-		respire = 180/int(envoi)
+		respire = float(180/float(envoi))
 		if (isConnected):
 			print ser.readline()
 			ser.write(envoi)
