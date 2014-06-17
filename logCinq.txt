@@ -1,0 +1,31 @@
+[PYT]	OUVERTURE PORT SERIE
+[TVS] Démarrage de la kinect (CTRL-C pour quitter)
+[PYT]	NORMAL:	94
+[AR[ARD]	Arduino OK
+
+[PYT]	NORMAL:	90
+[ARD]	Fin du setup
+
+[PYT]	NORMAL:	86
+[ARD]	Pas de communication
+
+[PYT]	NORMAL:	85
+CHANGEMENT-VITESSE : 	6
+
+[PYT]	NORMAL:	83
+[ARD]	Tour fait, v : 6
+
+[PYT]	NORMAL:	79
+[ARD]	Recu : 94
+
+[PYT]	NORMAL:	78
+CHANGEMENT-VITESSE : 	94
+
+[PYT]	NORMAL:	76
+[ARD]	Tour fait, v : 94
+
+[PYT]	NORMAL:	72
+[ARD]	Recu : 0
+
+[PYT]	NORMAL:	68
+CHANGEMENT-VITESSE : 	0
